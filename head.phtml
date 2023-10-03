@@ -1,0 +1,13 @@
+<?php
+// Obtener la URL raíz
+$baseUrl = 'https://rubiatoparedes.com/';
+
+// Obtener la URL actual sin la URL base
+$currentUrlPath = trim(Mage::app()->getRequest()->getRequestString(), '/');
+
+// Combinar la URL base con la URL actual para formar la URL canonical
+$canonicalUrl = $baseUrl . $currentUrlPath;
+?>
+
+<!-- Añadir la etiqueta canonical al head de la página -->
+<link rel="canonical" href="<?php echo $canonicalUrl ?>" />
